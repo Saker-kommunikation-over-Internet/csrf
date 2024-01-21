@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Profile</title>
+  </head>
+  <body>
+    <h1>User Profile</h1>
+    <p>Username: <%= username %></p>
+    <form action="/update-email" method="POST">
+      <input type="text" name="username" required />
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+      <!-- ^Här läggs vår CSRF-token. För att konstruera en CSRF-request måste hackerna veta vilken token vi har. -->
+      <button type="submit">Update Email</button>
+    </form>
+  </body>
+</html>
