@@ -75,7 +75,7 @@ app.get("/", isAuthenticated, (req, res) => {
   });
 });
 
-// Route to update the email - Vulnerable to CSRF
+//Route för att uppdatera mail.
 app.post("/update-email", isAuthenticated, verifyCsrfToken, (req, res) => {
   userData.username = req.body.username;
   res.redirect("/");
